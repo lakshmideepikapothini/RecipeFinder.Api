@@ -13,7 +13,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp", policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins(
+                "http://localhost:5173",
+                "https://recipe-finder-frontend-one.vercel.app"
+            )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
